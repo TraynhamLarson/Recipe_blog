@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<!-- This will show recipe name, picture of recipe, and directions -->
+<p><%= @recipe.name %></p>
+<%= image_tag @recipe.avatar.url %>
+<p><%= @recipe.directions %></p>
+
+<!-- user name will be bold -->
+<p>
+  <strong>User:</strong>
+  <%= @recipe.user_id %>
+</p>
+
+<!-- comment heading will be bold -->
+<p>
+  <strong>Comments:</strong>
+  <%= @recipe.comments %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

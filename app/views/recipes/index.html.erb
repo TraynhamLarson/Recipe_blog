@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Recipes</h1>
+    <% @recipes.each do |recipe| %>
+        <%= recipe.name %>
+        <%= image_tag recipes.avatar.url(:medium), class: "img-responsive" %>
+        <%= recipe.directions %>
+        <%= recipe.user_id %>
+        <%= recipe.comments %>
+        <%= link_to 'Show', recipe %>
+        <%= link_to 'Edit', edit_recipe_path(recipe) %>
+        <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<br>
+
+<%= link_to 'Create Recipe', new_recipe_path %>
